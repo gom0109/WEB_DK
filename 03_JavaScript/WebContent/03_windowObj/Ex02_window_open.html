@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//window.open('Ex02_popup1.html','창이름','width=450 height=400')
+	/* 	window.open('Ex02_popup2.html','창이름2','width=450 height=400')
+		window.open('Ex02_popup3.html','창이름3','width=450 height=400') */
+		
+		function showcenter(url){
+			winW = 600;
+			winH =400;
+			//document.write(screen.width+","+screen.height) //3840,2160
+			
+			winleft = (screen.width - winW)/2;
+			wintop= (screen.height - winH)/2;
+			
+			options =" width ="+ winW +" height= "+winH + " left= "+winleft+" top= "+wintop
+			window.open(url,'창이름3',options)
+			
+		}
+		
+		function openwindow(url){
+			mywin = window.open(url,'창이름3','width = 300 height = 200')
+			
+		}
+		
+		function closewindow(){
+			
+			mywin.close();
+		}
+		
+	</script>
+	
+</head>
+<body >
+	<form>
+		<input type="button" value="이벤트" onclick="window.open('Ex02_popup2.html','창이름2','width=450 height=400')">
+		<input type="button" value="화면 중앙에 띄우기" onclick="showcenter('Ex02_popup3.html')">
+		<input type="button" value="창열기" onclick="openwindow('Ex02_popup1.html')">
+		<input type="button" value="창닫기" onclick="closewindow()">
+	</form>
+
+</body>
+</html>

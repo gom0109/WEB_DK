@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03_popup.html</title>
+<style type="text/css">
+	body{
+		text-align: center;
+	}
+	input {
+		border: 1px solid brown;
+		background: yellow;
+		color: brown;
+	}
+	img{
+		width:300px;
+		heigth:200px;
+	}
+	
+	
+
+</style>
+	<script type="text/javascript">
+	function receiver(){
+		//alert(1);
+		document.myform.child_id.value = window.opener.document.myform.id.value;
+		document.myform.child_password.value = window.opener.document.myform.password.value
+	}
+	
+	function meclose(){
+		 window.opener.document.myform.id.value =document.myform.child_id.value;
+		window.opener.document.myform.password.value = document.myform.child_password.value;
+		
+		window.close();
+		//self.close();
+	}
+	
+	
+	
+	</script>
+	
+</head>
+<body onload="receiver()">
+	<img src="../images/pop1.jpg">
+	<br>
+	
+	<form name="myform">
+		<input type="text" name="child_id"> <br>
+		<input type="text" name="child_password"> <br>
+		
+		<input type="button" value="닫기" onclick="meclose()">
+		
+	
+	
+	</form>
+</body>
+</html>

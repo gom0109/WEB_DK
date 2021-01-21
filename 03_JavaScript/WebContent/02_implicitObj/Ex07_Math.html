@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		document.write();
+		maxNum =Math.max(30,70,2,124,3184);
+		document.write(maxNum+"<br>");
+		
+		minNum =Math.min(30,70,2,124,3184);
+		document.write(minNum+"<br>");
+		
+		roundNum =Math.round(3.5);//반올림
+		document.write(roundNum+"<br>");
+		
+		ceilNum =Math.ceil(3.1);//올림
+		document.write(ceilNum+"<br>");
+		
+		floorNum =Math.floor(3.9);//내림
+		document.write(floorNum+"<br>");
+		
+		parseNum =parseInt(3.9);
+		document.write(parseNum+"<br>");
+		
+		randNum =Math.random();
+		document.write(randNum+"<br>");
+		
+		randNum =Math.floor(Math.random()*10+1);
+		document.write(randNum+"<br>");
+		document.write("<br>");
+		do{
+			randx=Math.floor(Math.random()*10+1);
+			if (randx>=4 && randx<7){
+				document.write(randx+"<br>");
+				break;
+			}
+		}while(true)
+			randNum =Math.floor((Math.random()*5)+1);
+		document.write(randNum+"<br>");
+		document.write("<br>");
+		
+		var image= new Array('../images/pic1.jpg','../images/pic2.jpg','../images/pic3.jpg');
+		
+		num =Math.floor(Math.random()*3);
+		
+		
+		document.write("<img src='"+image[num]+"'>");
+		document.write();
+		
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//대화상자-alert
+		function isWinter(choice) {
+			document.write(choice);	
+			alert(choice);
+			if(choice == true){
+				alert("올해 겨울은 춥습니다");
+			}
+			else{
+				alert("올해 겨울은 춥지 않습니다");
+			}
+		}
+	
+	
+	</script>
+</head>
+<body>
+	<h3>올해 겨울은 춥습니까?</h3>
+	<form>
+		<input value="예" type="button" onclick="isWinter(true)">
+		<input value="아니오"  type="button" onclick="isWinter(false)">
+	</form>
+
+</body>
+</html>

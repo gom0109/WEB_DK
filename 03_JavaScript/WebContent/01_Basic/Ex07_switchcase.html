@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var favorite = prompt("어느 계절을 좋아하세요?(1:봄, 2:여름, 3:가을, 4:겨울)","1");
+		//alert(favorite)
+		
+		//switch(parseInt(favorite)){ 문자열로 처리하기 싫을때 사용
+		switch(favorite){
+		case "1":
+			document.write("<h2>봄을 좋아하시는군요..</h2>");
+			document.write("<img src='../images/spring.png'>");
+			break;
+		case "2":
+			document.write("<h2>여름을 좋아하시는군요..</h2>");
+			document.write("<img src='../images/summer.jpg'>");
+			break;
+		case "3":
+			document.write("<h2>가을을 좋아하시는군요..</h2>");
+			document.write("<img src='../images/fall.png'>");
+			break;
+		case "4":
+			document.write("<h2>겨울을 좋아하시는군요..</h2>");
+			document.write("<img src='../images/winter.png'>");
+			break;
+		default:
+			document.write("<h2>잘못된 입력입니다.</h2>");
+			break;
+		
+		}
+	</script>
+	
+</head>
+<body>
+
+</body>
+</html>
