@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		div{
+			background-color: yellow;
+			width: 200px;
+			height: 200px;
+			float: left;
+			margin: 3px;
+		}
+	</style>
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#slideup').click(function(){
+			$('div').slideUp()
+		})
+		$('#slidedown').click(function(){
+			$('div').slideDown(5000,function(){
+				$(this).css('background','pink')
+			})
+		})
+		$('#slidetoggle').click(function(){
+			$('div').slideToggle()
+		})
+	
+	})
+</script>
+</head>
+<body>
+	<button id="slideup">slideup</button>
+	<button id="slidedown">slidedown</button>
+	<button id="slidetoggle">slidetoggle</button>
+	<p>
+	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+</body>
+</html>

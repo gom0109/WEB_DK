@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		man = {
+			name : "hong",
+			age : 13,
+			birthdate : new Date(1992, 0, 9),
+			score : {
+				kor : 50,
+				eng : 30,
+				math : 90
+			}
+		};
+
+		woman = {
+			name : "lee",
+			age : 21,
+			birthdate : new Date(2002, 1, 2),
+			score : {
+				kor : 90,
+				eng : 90,
+				math : 80
+			}
+		};
+
+		console.log(man.name)
+		console.log(man.birthdate)
+		console.log(man.score.kor)
+
+		person = new Array({
+			name : "hong",
+			age : 13,
+			birthdate : new Date(1992, 0, 9),
+			score : {
+				kor : 50,
+				eng : 30,
+				math : 90
+			}
+		}, {
+			name : "lee",
+			age : 21,
+			birthdate : new Date(2002, 1, 2),
+			score : {
+				kor : 90,
+				eng : 90,
+				math : 80
+			}
+		}
+
+		);
+		
+		
+		person1 = new Array(man,woman);
+		
+		console.log(person[0].name)
+		console.log(person[1].score.kor)
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){//형제로 추가
+		$('header').after($('<div> 좋아하는 과일: 사과 </div>'));
+		$('header').after($('<div> 좋아하는 과일: 딸기</div>'));
+		//사과를 먼저 넣었지만 딸기를 후에 header뒤에 넣었으므로 딸기가 먼저 나오는것으로 보인다
+		$('<div> 좋아하는 과일: 바나나 </div>').insertAfter($('header'))
+		$('<div> 좋아하는 과일: 복숭아 </div>').insertAfter($('header'))
+		
+		$('footer').before($('<div> 좋아하는 과일: 서연 </div>'));
+		$('footer').before($('<div> 좋아하는 과일: 새롬</div>'));
+		$('<div> 좋아하는 과일: 지선 </div>').insertBefore($('footer'))
+		$('<div> 좋아하는 과일: 채영 </div>').insertBefore($('footer'))
+	})
+
+</script>
+</head>
+<body>
+	<header> <!-- 시멘틱 요소 -->
+		<h1>과일</h1>
+	</header>
+	
+	<footer> <!-- 시멘틱 요소 -->
+		<h3><i>jQuery 공부중...</i></h3>
+		
+	</footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		p{
+			font-size: 15px;
+			color: blue;
+			
+		}
+		span{
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		//대화상자-prompt
+		var yourName = prompt("이름을 넣어주세요", "아무개");
+		document.write("<p><span>"+yourName+"</span></p><br>")
+		
+		if(yourName ==""){
+			document.write("이름 누락");
+			
+		}
+		else if(yourName != null){
+			document.write("<p><span>"+yourName+"</span></p><br>");
+		}
+		else{
+			document.write("취소 클릭함")
+		}
+		
+	
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

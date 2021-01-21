@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{
+		border: 1px solid black
+	}
+
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.getJSON("item.json",function(data){
+			$('#fruitData').append(
+				"<tr>"+
+					"<td>id</td>"+
+					"<td>name</td>"+
+					"<td>price</td>"+
+					"<td>description</td>"+
+				"</tr>"
+			);
+			
+			$.each(data,function(){
+				$('#fruitData').append(
+						"<tr>"+
+						"<td>"+this.id+"</td>"+
+						"<td>"+this.name+"</td>"+
+						"<td>"+this.price+"</td>"+
+						"<td>"+this.description+"</td>"+
+					"</tr>"
+				
+				)
+				
+			})		
+		})
+	
+		
+		
+	})
+
+
+
+</script>
+</head>
+<body>
+	<h3>과일의 특성 조사 자료</h3>
+	<table id="fruitData"></table>
+</body>
+</html>
+
+<!--
+json파일 텍스트 포멧 제이슨객체{} 여러개[]
+ 
+$.getJSON(url,data,success)
+url: 서버에 요청할 url
+data:요청할떄 서버에 보낼 자바스크립트 객체나 문자열 형식의 데이터
+success:요청이 성공했을때 호출되는 콜백함수 -->
+
+

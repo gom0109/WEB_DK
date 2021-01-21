@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 200px;
+		height: 200px;
+		margin-left: 50px;
+	}
+</style>
+
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#sel').change(function(){
+			//val = $(this).attr('value')
+			val = $(this).val()
+			$('#img').attr('src',('../images/'+val))
+		}).change()
+	})
+</script>
+</head>
+<body>
+	<form name="frm">
+		<table>
+			<tr>
+				<td>
+				<select id="sel">
+					<option value="strawberry.gif">딸기
+					<option value="banana.gif">바나나
+					<option value="apple.gif" selected="selected">사과			
+				</select>
+				</td>
+				<td>
+					<img  id="img">
+				</td>
+			</tr>
+				
+		</table>
+	</form>
+
+</body>
+</html>

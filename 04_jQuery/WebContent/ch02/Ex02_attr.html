@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#left_side div{
+		float: left;
+		margin-left: 10px;
+	}
+	#left_side2{
+		clear: left;
+	}
+
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				//alert(1)
+				temp = $('img').eq(0).attr('src');
+				$('img').eq(0).attr('src',$('img').eq(1).attr('src'))
+				$('img').eq(1).attr('src',$('img').eq(2).attr('src'))
+				$('img').eq(2).attr('src',temp)
+				
+			})
+			$('#btn2').click(function(){
+				temp = $('img').eq(2).attr('src')
+				$('img').eq(2).attr('src', $('img').eq(1).attr('src'))
+				$('img').eq(1).attr('src',$('img').eq(0).attr('src'))
+				$('img').eq(0).attr('src',temp)
+								
+			})
+		});
+	</script>
+</head>
+<body>
+	<div id="left_side">
+		<div>
+			<img src="../images/tara01.jpg" width="150" height="150">
+		</div>
+		<div>
+			<img src="../images/tara02.jpg" width="150" height="150">
+		</div>
+		<div>
+			<img src="../images/tara03.jpg" width="150" height="150">
+		</div>
+	
+	
+	
+	</div>
+	<div id="left_side2">
+		<input id="btn"   type="button" value="버튼1" >
+		<input id="btn2"   type="button" value="버튼2" >
+	</div>
+
+</body>
+</html>

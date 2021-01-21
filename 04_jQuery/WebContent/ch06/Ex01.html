@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+span {
+	display: none;
+}
+</style>
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button:eq(0)').click(function() {
+			$('span:eq(0)').css('display', 'inline')//span은 인라인요소이므로 inline를 적는다.
+		})
+		$('button:eq(1)').click(function() {
+			$('span:eq(0)').hide()//==display:none
+		})
+		$('button:eq(2)').click(function() {
+			$('span:eq(1)').show(5000, function() {
+				$(this).css('background', 'yellow');
+			})
+		})
+		$('button:eq(3)').click(function() {
+			$('span:eq(1)').hide('slow',function(){
+				
+			})
+		})
+
+		$('button:eq(4)').click(function() {
+			$('span:eq(2)').toggle('slow')
+		})
+
+	})
+</script>
+</head>
+<body>
+	<button>show it</button>
+	<button>hide it</button>
+	<span>안녕하세요</span>
+	<br>
+
+	<button>show it slow</button>
+	<button>hide it slow</button>
+	<span>반갑습니다</span>
+	<br>
+
+	<button>show/hide</button>
+	<span>또 만나요</span>
+	<br>
+
+
+
+</body>
+</html>

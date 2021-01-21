@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <title>Ex05_append_not_end_filter.html</title>
+	<script type="text/javascript" src="./../js/jquery.js"></script> 
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		
+    		/*  for(i=1;i<7;i++){
+    			$('span').append("<sup>"+i+"<sup>")
+    		}  */
+    		$('span').each(function(index){
+    			
+    			$(this).append("<sup>"+(index+1)+"<sup>")
+    			//$(this).after("<sup>"+(index+1)+"<sup>")
+    		}) 
+    		$('span:even').css('background','yellow')
+    		$('span:odd').css('background','lightblue')
+    		
+    	})
+       
+    </script>
+</head>
+<body>
+	<h3>jQuery is a new kind of JavaScript Library.</h3>
+	<div>
+		<span class="term">jQuery</span> is a fast and concise <span class="term">JavaScript</span> Library 
+		that simplifies <span class="term">HTML</span> document traversing, 
+		<span class="term">event handling</span>, animating, and <span class="term">Ajax</span> interactions 
+		for rapid <span class="term">web</span> development. 
+		jQuery is designed to change the way that you write JavaScript.
+	</div>
+</body>
+</html>
+
+
+
+

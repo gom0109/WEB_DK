@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	float: left;
+	width: 180px;
+	height: 300px;
+	margin: 3px;
+}
+</style>
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#menu1').click(function(){
+			$.ajax({
+				url:"menu.html",//요청 url
+				dataType:"html",//서버에서 응답결과로 보내온 반환 타입
+				success:function(data){/* 서버가 보내온 결과물을 받는다 *///callback함수
+					$('#message1').html("성공: "+ data);
+				},
+				error:function(){
+					alert("실패");
+				}
+			});
+		})
+		$('#menu2').click(function(){
+			$.ajax({
+				url:"menu.html",
+				dataType:"html",
+				success:function(data){
+					$('#message2').html($(data).children('li'))
+					//$('#message2').html($(data).find('li'))
+				},
+				error:function(){
+					alert('실패')
+				}
+				
+			})
+			
+			
+		})
+
+	});
+</script>
+</head>
+<body>
+	<div>
+		<a href="#" id="menu1">메뉴보기1</a>
+		<p></p>
+		<span id="message1"></span>
+	</div>
+	<div>
+		<a href="#" id="menu2">메뉴보기2</a>
+		<p></p>
+		<span id="message2"></span>
+	</div>
+
+	<div style="float: none;">
+		<!-- <div style="clear: left;"> -->
+		<h3>load 예제입니다.</h3>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 60px;
+		height: 60px;
+		border: 2px solid green;
+		float: left;
+		margin: 5px;
+	}
+	
+
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('div').css('background-color','yellow')
+		.filter(".middle").css('border-color','red')
+		/* $('div').css('background-color','yellow')
+		.not(".middle").css('border-color','red') middle이 아닌곳에 적용 not*/
+		$('div').slice(2,4).css('background-color','pink') //012345 2번째부터 4번째 앞까지
+		
+	})
+	
+
+
+
+</script>
+</head>
+<body>
+	<div id="first"></div>
+	<div id="second" class="middle"></div>
+	<div id="third" class="middle"></div>
+	<div id="fourth" class="middle"></div>
+	<div id="fifth" class="middle"></div>
+	<div id="sixth"></div>
+	
+	<p class="middle"></p>
+	
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	text-align: center;
+}
+
+select {
+	width: 100px;
+}
+</style>
+<script type="text/javascript">
+	var arr = new Array("선택", "더하기", "빼기", "곱하기", "나누기");
+
+	function init() {
+		for (i = 0; i < arr.length; i++) {
+			document.myform.sel.options[i] = new Option(arr[i]);
+
+		}
+	}
+	
+
+	function wclose() {
+		sindex=document.myform.sel.selectedIndex;
+		
+		num1 = document.myform.t1.value;
+		num2 = document.myform.t2.value;
+		value=0;
+		 if(sindex==1){
+			 value = Number(num1)+Number(num2)
+		 }else if(sindex==2){
+			 value = Number(num1)-Number(num2)
+		 }
+		 else if(sindex==3){
+			 value = Number(num1)*Number(num2)
+		 }
+		 else if(sindex==4){
+			 value = Number(num1)/Number(num2)
+		 }
+		 
+		 window.opener.document.myform.result.value = value
+		
+		window.close()
+
+	}
+</script>
+</head>
+<body onload="init()">
+	<form name="myform">
+		<input type="text" name="t1" size="5"> 
+		<select id="sel"></select>
+		<input type="text" name="t2" size="5"><br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> <input type="button" value="닫기" onclick="wclose()">
+
+
+	</form>
+
+
+</body>
+</html>

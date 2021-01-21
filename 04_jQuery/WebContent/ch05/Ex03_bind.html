@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 200px;
+		height: 200px;
+	}
+
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//alert(1)
+		$('img').bind('mouseover mouseout click',function(){
+			target = $(this);
+			target.width(target.width()+30);//target.width()가로안에 아무것도 안적으면 값을가져오는 함수
+			target.height(target.height()+30);
+			if(target.width()>400){
+				$('img').unbind();
+				//$('img').unbind('click'); 클릭만 해제@@@@@@@
+			}
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<img src="../images/b.jpg">
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 300px;
+	height: 200px;
+	background-color: yellow;
+	border: 1px solid black;
+	
+	
+}
+</style>
+
+<script type="text/javascript">
+	var f_selarr = new Array("한식", "중식", "일식", "양식");
+	var s_selarr = new Array();
+	s_selarr[0] = new Array("김치찌개", "된장찌개", "불고기", "설렁탕", "뼈해장국");
+	s_selarr[1] = new Array("탕수육", "팔보채", "깐풍기", "볶음밥");
+	s_selarr[2] = new Array("초밥", "덮밥", "문어구이", "스시", "우동");
+	s_selarr[3] = new Array("스테이크", "캐비어", "푸아그라", "파스타");
+
+	function init() {
+		document.myform.sel1.options[0] = new Option("선택");
+		document.myform.sel2.options[0] = new Option("선택");
+		for (i = 0; i < f_selarr.length; i++) {
+			document.myform.sel1.options[i + 1] = new Option(f_selarr[i]);
+		}
+
+		/* document.myform.sel1.options[0]=new Option("선택");
+		document.myform.sel1.options[1]=new Option("한식");
+		document.myform.sel1.options[2]=new Option("중식");
+		document.myform.sel1.options[3]=new Option("일식");
+		document.myform.sel1.options[4]=new Option("양식");
+		 */
+
+	}
+	function fchange() {
+		var s_sel = document.myform.sel2;
+
+		for (i = s_sel.length - 1; i > 0; i--) {
+			s_sel.options[i] = null;
+
+		}
+
+		var index = document.myform.sel1.selectedIndex;
+		ftext = document.myform.sel1.options[index].text;
+
+		for (i = 0; i < s_selarr[index - 1].length; i++) {
+			document.myform.sel2.options[i + 1] = new Option(
+					s_selarr[index - 1][i]);
+
+		}
+
+	}
+	function schange() {
+		
+		var index2 = document.myform.sel2.selectedIndex;
+		stext = document.myform.sel2.options[index2].text;
+		myarea = document.getElementById("result");
+		myarea.innerHTML = ftext + "," + stext;
+
+	}
+</script>
+
+</head>
+<body onload="init()">
+	<form name="myform">
+		<select id="sel1" style="width: 70px" onchange="fchange()">
+
+
+
+		</select> <select id="sel2" style="width: 70px" onchange="schange()">
+
+
+		</select>
+
+
+
+	</form>
+	<div id="result"></div>
+</body>
+</html>

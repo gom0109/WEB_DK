@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function remove(){
+		if (document.f1.t1.value == document.f1.t1.defaultValue){
+			document.f1.t1.value=""
+		}		
+	}
+	
+	
+	function check(){
+		//alert(1)
+		if(document.f1.t1.value == "abc"){
+			alert("사용할수 없는 아이디 입니다.")
+			return false
+		}
+		if(document.f1.t1.value == ""){
+			alert("아이디를 입력하세요")
+			return false
+		}
+		cl=document.f1.cb.length
+		//alert(cl)
+		flag=false
+		str="선택한 가수는 "
+		for(i=0;i<cl;i++){
+			if(document.f1.cb[i].checked){
+				flag=true;
+				str =str+document.f1.cb[i].value+" "
+			}
+		}
+		if(flag==false){
+			alert("가수 한명은 선택해야합니다.")
+			return false
+		}
+		alert(str)
+	}
+
+</script>
+</head>
+<body>
+
+	<form action="abc.jsp" name="f1">
+		아이디<input type="text" name="t1" value="abc" onfocus="remove()">
+		비밀번호<input type="password" name="pw" value="1234">
+		
+		<br>
+		<input type="checkbox" name="cb" value="낸시">낸시
+		<input type="checkbox" name="cb" value="다현">다현
+		<input type="checkbox" name="cb" value="조현">조현
+		<input type="checkbox" name="cb" value="서연">서연
+		<input type="checkbox" name="cb" value="새롬">새롬
+		<br>
+		
+		<input type="submit" value="확인" onclick="return check()">
+		<input type="reset" value="리셋">
+	
+	
+	</form>
+
+
+</body>
+</html>

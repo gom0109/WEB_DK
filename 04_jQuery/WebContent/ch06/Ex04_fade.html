@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin: 3px;
+	display: none;
+}
+#red{
+	background-color: red;
+}
+#green{
+	background-color: green;
+}
+#blue{
+	background-color: blue;
+}
+</style>
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).click(function(){
+			$('div:hidden:eq(0)').fadeIn(3000).fadeTo('slow',0.3).fadeOut(3000)//투명도 설정 서서히 밝아짐
+			//$('div:hidden:eq(0)').show(3000).fadeTo('slow',0.3)//한쪽꼭지점부터 점점커짐
+		})
+
+	})
+</script>
+</head>
+<body>
+	<span>클릭</span>
+	<p></p>
+	
+	<div id="red"><span>하하하</span>	</div>
+	<div id="green"></div>
+	<div id="blue"></div>
+	
+
+</body>
+</html>

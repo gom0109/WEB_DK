@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+		#panel1,#panel2{
+			background-color: green;
+			text-align: center;
+			font-size: 30px;
+			margin-top: 3px;
+			
+			
+		}
+		#panel2{
+			height: 200px;
+		}
+		
+	</style>
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	 $('#panel1').click(function(){
+		  $('#panel2').slideToggle(function(){
+			  $('img').css('border','2px red solid')
+		  });
+	 })
+	
+	})
+</script>
+</head>
+<body>
+	<div id="panel1"> click to slide down panel</div>
+	<div id="panel2">
+		<img src="../images/im0.jpg">
+	</div>
+</body>
+</html>

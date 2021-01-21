@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+td {
+	border: 1px solid black;
+	
+}
+table{
+	border-collapse: collapse;
+	margin: 20px;
+}
+img{
+	width: 100px;
+	height: 100px;
+}
+
+</style>
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//arr = ["a.jpg","b.jpg","c.jpg","d.jpg","e.jpg"]
+		//0~4사이의 정수난수 발생
+		arr=new Array("a.jpg","b.jpg","c.jpg","d.jpg","e.jpg");
+		
+		
+		
+		$('#btnCreate').click(function() {
+			t1 = "<table>"
+			row = $('#row').val();
+			col = $('#col').val();
+			if(isNaN(row) || isNaN(col)){
+				alert("숫자를 입력하세요");
+				return ;//숫자가 아닐경우 테이블 생성을 방지하기 위해
+			}
+			
+			for (i = 0; i < row; i++) {
+				t1 = t1 + "<tr>" 
+				for (j = 0; j < col; j++) {
+					randNum =Math.floor((Math.random()*5));
+					t1 = t1 + "<td><img src='../images/" + arr[randNum] + "'></td>"
+				}
+				t1 = t1 + "</tr>"
+			}
+			t1 = t1 + "</table>"
+			
+
+			$('#resultTable').empty().append(t1)
+			//$('#resultTable').html(t1)
+		})
+
+	})
+</script>
+</head>
+<body>
+	<input type="text" id="row" value="2" size="4"> 행
+	<input type="text" id="col" value="3" size="4"> 열
+
+	<input type="button" id="btnCreate" value="테이블 동적 생성">
+	<div id="resultTable"></div>
+
+</body>
+</html>

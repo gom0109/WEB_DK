@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#region{
+		width: 200px;
+		height: 200px;
+		
+		overflow: hidden;/* @@@@@@@@@@@@@@@@@@@@ */
+		margin: auto;
+	}
+	#images{
+		width: 600px;
+		height: 200px
+	}
+
+
+	img{
+		width: 200px;
+		height: 200px;
+	}
+	#direction{
+		width:360px;
+		margin: auto;
+	}
+	.leftbtn{
+		margin-top: 10px;
+	}
+	.rightbtn{
+		margin-top: 10px;
+		margin-left: 290px;
+	}
+	
+</style>
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		i=0;
+		$('.leftbtn').bind('click',function(){
+			
+			i++;
+			if(i>2){
+				alert("마지막 이미지 입니다")
+				return;
+				i--;
+				
+			}
+			$('#firstimage').animate({marginLeft : '-=205px'},2000)
+		})
+		$('.rightbtn').bind('click',function(){
+			
+			i--;
+			if(i<1){
+				alert("첫 이미지 입니다")
+				return;
+				i++;
+				
+			}
+			$('#firstimage').animate({marginLeft : '+=205px'},2000)
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="../images/b.jpg" id="firstimage"> </a>
+			<a href="#"><img src="../images/c.jpg" id="secondimage"> </a>
+			<a href="#"><img src="../images/d.jpg" id="thirdimage"> </a>
+		
+		</div>
+	
+	</div>
+	<div id="direction">
+		<button class="leftbtn"> &laquo; </button>
+		<button class="rightbtn"> &raquo; </button><!--  &nbsp; -->
+	</div>
+
+</body>
+</html>

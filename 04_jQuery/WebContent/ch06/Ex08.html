@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	position: absolute;
+}
+	
+	
+</style>
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function(){
+			$('div').animate({left: '+300px', opacity:'0.4'},'slow');
+			$('div').animate({width: '300px', opacity:'0.8'},'slow');
+			$('div').animate({height: '200px', opacity:'0.1'},'slow');
+		})
+		
+		
+	})
+</script>
+</head>
+<body>
+	<button>Start Animation</button>
+	<p>상, 하, 좌, 우로 움직이는 애니메이션</p>
+	<br><br>
+	
+	<div style="background: green; height: 100px; width: 100px;"></div>
+</body>
+</html>

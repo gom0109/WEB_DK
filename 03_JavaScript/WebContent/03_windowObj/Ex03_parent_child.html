@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03_parent_child.html</title>
+<style type="text/css">
+body {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	function openwin(filename) {
+		wname = "popup";
+		winW = 600;
+		winH = 450;
+
+		winleft = (screen.width - winW) / 2;
+		wintop = (screen.height - winH) / 2;
+
+		mywin = window.open(filename, 'wname', 'width = ' + winW + ' height= ' + winH
+				+ ' left= ' + winleft + ' top= ' + wintop)
+	}
+</script>
+</head>
+<body>
+	<form name="myform">
+		<input type="text" name="id"> <br> 
+		<input type="password" name="password"> <br>
+		<input type="button" value="팝업창 열기"onclick="openwin('Ex03_popup.html')">
+
+
+
+	</form>
+
+
+</body>
+</html>

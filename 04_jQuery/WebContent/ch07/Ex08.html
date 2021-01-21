@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+td {
+	border: 1px solid black
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	//http://api.flickr.com/services/feeds/photos_public.gne?tags=flower&tagmode=any&format=json&jsoncallback=?
+	$(document).ready(
+			function() {
+				$.get('item.xml', function(data) {
+
+					$('#fruitData').append(
+							"<tr>" + "<td>id</td>" + "<td>name</td>"
+									+ "<td>price</td>" + "<td>description</td>"
+									+ "</tr>");
+
+					$(data).find('item').each(
+							function() {
+								$('#fruitData').append(
+										"<tr>" + "<td>"+$(this).attr('id')+"</td>"
+												+ "<td>"+$(this).attr('name')+"</td>"
+												+ "<td>"+$(this).find("price").text()+"</td>"
+												+ "<td>"+$(this).find("description").text()+"</td>"
+												+ "</tr>"
+
+								)
+
+							})
+
+				})
+			})
+</script>
+</head>
+<body>
+	<h3>과일의 특성 조사 자료</h3>
+	<table id="fruitData"></table>
+
+</body>
+</html>
+
+
+<!-- $.get(url,콜백함수) xml파일 가져올때 사용 -->
+<!-- 사용자 정의 태그 xml
+<fruit>
+	<apple price = '3000'>
+		<price>3000
+		</price>
+	</apple>
+</fruit>
+
+ -->
+
+
+
+
+
+

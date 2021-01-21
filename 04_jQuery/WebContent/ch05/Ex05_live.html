@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	p{
+		background-color: yellow;
+	}
+
+</style>
+
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		cnt=0
+		$('p').live('dblclick',function(){//bind 와 live의 차이점!!!!!!
+			//이벤트 처리를 위임할때 사용
+			$(this).after("<p>Another Paragraph!"+cnt++ + "</p>")
+			
+			if(cnt==5){
+				$('p').die();
+			}
+			
+		})
+		
+
+	})
+</script>
+</head>
+<body>
+	<p>Click me!</p>
+
+</body>
+</html>

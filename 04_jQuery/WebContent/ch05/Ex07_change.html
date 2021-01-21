@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+</style>
+
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#coffee').change(function(){
+			t1=$('#coffee option:selected').text()
+			$('div').html(t1)
+		}).change()
+
+	})
+</script>
+</head>
+<body>
+
+	<select id="coffee" size="3" multiple="multiple">
+		<option value="coffee1">아메리카노
+		<option value="coffee2">카페라떼
+		<option value="coffee3">카푸치노
+		<option value="coffee4">카라멜마끼아또
+		<option value="coffee5">고구마라떼
+		<option value="coffee6">녹차라떼
+	</select>
+	<div></div>
+
+</body>
+</html>

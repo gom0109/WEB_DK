@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #left_side img{
+            width: 100px;
+            height: 100px;
+        }
+        #left_side{
+            float: left;
+            border: 1px black solid;
+            margin-right: 10px;
+        }
+        #area{
+            float: left;
+        }
+        #imgg{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+    <script src="./../js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.small').bind('mouseover', function (){
+                var src = $(this).attr('src');
+                $('#imgg').attr('src', src).fadeIn(3000);
+                $(this).css('opacity', 0.6);
+            });
+            $('.small').bind('mouseout', function (){
+                $(this).css('opacity', 1);
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <div id="left_side">
+        <div><img class="small" src="./../images/tara01.jpg"></div>
+        <div><img class="small" src="./../images/tara02.jpg"></div>
+        <div><img class="small" src="./../images/tara03.jpg"></div>
+    </div>
+    <div id="area">
+        <img id="imgg">
+    </div>
+</body>
+</html>

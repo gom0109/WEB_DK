@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('img').attr({
+				width:'100px',
+				height:'100px',
+				border:'1px solid black'
+			});
+			//$('img').eq(0).attr('src',"../images/"+$("img").eq(0).attr("title"))
+			$('img').attr('src',function(){//callback함수 명시적으로 호출하는함수가 아니라 
+							//이벤트가 발생하거나 특정 시점에 도달했을때 시스템에서 자동으로 호출되는 함수
+				return '../images/'+$(this).attr('title')
+				//'../images/'+this.title가능
+			})
+			$('img').attr('title',function(index){
+				return index+"번째 이미지"
+				
+			})
+			
+			$('input').click(function(){
+				$('img').eq(0).attr('title','')
+				//$('img').eq(0).removeAttr('title')
+			})
+			
+		});
+	</script>
+</head>
+<body>
+	<img title="image1.jpg">
+	<img title="image2.jpg">
+	<img title="image3.jpg">
+	
+	<br>
+	
+	<input type="button" value="속성 제거">
+</body>
+</html>

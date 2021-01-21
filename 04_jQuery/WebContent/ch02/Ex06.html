@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.a,.c{
+		font-weight: bold;
+		color: blue;
+		cursor: pointer;/* 손가락모양 */
+		/* cursor: progress; */
+	}
+	.toggleStyle{
+		color: red;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.a').click(function(){
+			$('.b').toggle(5000); //접었다 펼수있는기능
+			
+		})
+		$('.c').click(function(){
+			$('.d').toggle('fast');
+		})
+		
+		$('div').click(function(){
+			
+			if($(this).hasClass('toggleStyle')){
+				$(this).removeClass()
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	<p class="a">남자배우 인기순위</p>
+	<p class="b">하정우</p>
+	<p class="b">김수현</p>
+	<p class="b">차은우</p>
+	<p class="b">송승헌</p>
+	<p class="b">소지섭</p>
+	<hr>
+	
+	<p class="c">여자배우 인기순위</p>
+	<p class="d">전지현</p>
+	<p class="d">송혜교</p>
+	<p class="d">김태희</p>
+	<p class="d">하지원</p>
+	<p class="d">공효진</p>
+	<br>
+	
+	<div class="toggleStyle">div 영역입니다.</div>
+	
+	
+	
+</body>
+</html>

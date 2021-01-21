@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.small{
+		height: 200px;
+		width: 200px;
+	}
+	body>div{
+		float: left;
+		
+	}
+	#area{
+		margin-left: 10px;
+	}
+	#imgsrc{
+		height: 630px;
+		width: 630px;
+	}
+</style>
+
+<script type="text/javascript" src="./../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$('.small').live({
+			mouseover:function(){
+				
+				//$(this).css('opacity',0.5);
+				$(this).fadeTo('slow',0.3);
+				s1=$(this).attr('src');
+				$('#imgsrc').css('display','none')
+				$('#imgsrc').attr('src',s1).fadeIn();
+				
+			},
+			mouseout:function(){
+				//$(this).css('opacity',1.0)
+				$(this).fadeTo('slow',1.0);
+				$('#imgsrc').fadeOut(function(){
+					$(this).removeAttr('src');
+				})
+				
+			}
+		})
+		
+		
+	})
+</script>
+</head>
+<body>
+	<div id="left_side">
+		<div><img class="small" src="../images/tara01.jpg"></div>
+		<div><img class="small" id="first" src="../images/tara02.jpg"></div>
+		<div><img class="small" src="../images/tara03.jpg"></div>
+		
+	</div>
+	
+	<div id="area">
+		<img id="imgsrc">
+	</div>
+
+</body>
+</html>
